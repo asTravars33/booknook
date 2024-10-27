@@ -1,0 +1,258 @@
+body{
+	font-family: 'Poppins', sans-serif;
+	height: 100vh;
+	overflow-y: hidden;
+}
+p{
+	font-size: 1rem;
+}
+.reg-div{
+    background-color: #C89055;
+    border: 3px solid #FDD79F;
+    border-radius: 10px;
+	padding: 10px;
+}
+.scrolling{
+    overflow-y: scroll;
+}
+#inner{
+	display: grid;
+	width: 100%;
+	height: 80vh;
+	grid-template-rows: repeat(8, minmax(0, 1fr));
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	grid-column-gap: 20px;
+	font-family: 'Poppins', sans-serif;
+}
+#title{
+	height: 20vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+#cover{
+    /*position: absolute;
+    margin-left: 3.60000007%;
+    margin-top: 0;
+    width: 20%;
+    height: 43.75%; */
+	grid-row: 1/6;
+	grid-column: 1/2;
+	margin-bottom: 20px;
+	display: flex;
+    justify-content: center;
+    overflow: hidden;
+	align-items: center;
+}
+#rating{
+    /*position: absolute;
+    margin-left: 3.60000007%;
+    margin-top: 26.2%;
+    width: 20%;
+    height: 6.25%;*/
+	grid-row: 6/8;
+	grid-column: 1/2;
+	margin-bottom: 20px;
+	position: relative;
+}
+.stars{
+	position: relative;
+	margin: 0 auto;
+	top: 50%;
+	width: 90%;
+	transform: translateY(-25%);
+}
+#tags{
+    /*position: absolute;
+    margin-left: 3.60000007%;
+    margin-top: 31.7%;
+    width: 20%;
+    height: 12.5%; */
+	grid-row: 8/9;
+	grid-column: 1/2;
+	padding: 5px;
+}
+.tag-elem{
+    background-color: #f5ecd5;
+    border-radius: 5px;
+    display: inline-block;
+	padding: 3px;
+}
+.tag-elem p{
+	margin: auto;
+}
+#quotes{
+    /*position: absolute;
+    margin-left: 27%;
+    margin-top: 0;
+    width: 40%;
+    height: 31.25%;*/
+	grid-row: 1/5;
+	grid-column: 2/4;
+	margin-bottom: 20px;
+	padding: 8px;
+}
+.quotes-head{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.quotes-head > button {
+	margin-left: 5px;
+}
+.quotes-head > h4{
+	padding: 0;
+}
+#notes{
+    /*position: absolute;
+    margin-left: 27%;
+    margin-top: 18%;
+    width: 40%;
+    height: 37.5%;*/
+	grid-row: 5/9;
+	grid-column: 2/4;
+}
+.notes-gallery{
+	width: 80%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	margin: auto;
+	padding: 0;
+}
+.note{
+	display: inline-block;
+	margin-right: 10px;
+	padding: 5px;
+}
+#folders{
+    /*position: absolute;
+    margin-left: 70.3333333%;
+    margin-top: 0;
+    height: 70%;
+    width: 20%;*/
+	grid-row: 1/9;
+	grid-column: 4/5;
+}
+.folder{
+    float: left;
+    vertical-align: top;
+    height: 14%;
+    width: 5.5vw; 
+    position: relative;
+    /* TEST THE WIDTH!! */
+    margin-top: 13px;
+    margin-left: 13px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    /*align-items: center;
+    overflow: hidden*/
+}
+.folder img{
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+.folder p{
+    display: block;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#cover img{
+	display: block;
+	height: 90%;
+	width: auto;
+}
+.hidden{
+    visibility: hidden;
+}
+
+.carousel{
+	width: 80%;
+	margin: auto;
+	height: 70%;
+	margin-top: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	column-gap: 10px;
+}
+.carousel-display{
+	height: 100%;
+	display: block;
+	position: relative;
+	width: 80%;
+	text-align: center;
+}
+.carousel-display p{
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 1.5rem;
+	z-index: 10;
+}
+#folderDisplay{
+	display: block;
+	width: 55%;
+	height: 70%;
+	position: absolute;
+	z-index: 15;
+	top: 60%;
+	left: 50%;
+	background-color: #F0C15F;
+	border: 2px solid #F2D6A0;
+	transform: translateX(-50%) translateY(-50%);
+	visibility: hidden;
+}
+#addToFolder{
+	width: 100%;
+	height: 13%;
+	position: absolute;
+	bottom: 0;
+}
+
+/* table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #C89055;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tr:nth-child(odd){
+	background-color: #F2D6A0;
+}
+
+/* image gallery styles */
+.gallery{
+	display: flex;
+	flex-wrap: wrap;
+	float: top;
+	gap: 10px;
+}
+.gallery-item{
+	flex: 1 1 calc(25% - 10px);
+	max-width: calc(25% - 10px);
+}
+.gallery-item img{
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 10px;
+}

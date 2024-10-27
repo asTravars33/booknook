@@ -1,0 +1,104 @@
+.reg-div{
+    background-color: #C89055;
+    border: 3px solid #FDD79F;
+    border-radius: 10px;
+}
+.scrolling{
+    overflow-y: scroll;
+}
+#title{
+    margin-top: 2%;
+    margin-bottom: 1.3%;
+}
+#cover{
+    position: absolute;
+    margin-left: 3.60000007%;
+    margin-top: 0;
+    width: 20%;
+    height: 43.75%;
+}
+#rating{
+    position: absolute;
+    margin-left: 3.60000007%;
+    margin-top: 26.2%;
+    width: 20%;
+    height: 6.25%;
+}
+#tags{
+    position: absolute;
+    margin-left: 3.60000007%;
+    margin-top: 31.7%;
+    width: 20%;
+    height: 12.5%;
+}
+.tag-elem{
+    background-color: #f5ecd5;
+    border-radius: 5px;
+    display: inline-block;
+    height: 33.3333%;
+    align-items: center;
+    justify-content: center;
+}
+.tag-elem p{
+    font-size: 1.7vh;
+}
+#quotes{
+    position: absolute;
+    margin-left: 27%;
+    margin-top: 0;
+    width: 40%;
+    height: 31.25%;
+}
+#notes{
+    position: absolute;
+    margin-left: 27%;
+    margin-top: 18%;
+    width: 40%;
+    height: 37.5%;
+}
+#folders{
+    position: absolute;
+    margin-left: 70.3333333%;
+    margin-top: 0;
+    height: 70%;
+    width: 20%;
+}
+.folder{
+    float: left;
+    vertical-align: top;
+    height: 14%;
+    width: 5.5vw; 
+    position: relative;
+    /* TEST THE WIDTH!! */
+    margin-top: 13px;
+    margin-left: 13px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    /*align-items: center;
+    overflow: hidden*/
+}
+.folder img{
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+.folder p{
+    display: block;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8vh;
+}
+#cover img{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    height: 80%;
+    width: 65%;
+}
+#id-info{
+    visibility: hidden;
+}

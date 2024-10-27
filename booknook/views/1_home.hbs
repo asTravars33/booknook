@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home | Book Nook</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/1_home.css">
+</head>
+<body>
+    <!-- modal (to add a book)-->
+    <div class="modal fade" id="add_book_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Book</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="/imupload" method="POST" enctype="multipart/form-data">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" /><br>
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" /><br><br>
+                <!--<input type="file" name="image" />-->
+                <button type="submit">Add To Library</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- shelves -->
+	<div class="alert" style="visibility: {{alert-display}};">
+		<span class="alert-close" onclick="this.parentElement.style.display='none';">&times;</span>
+		Error: Book not found! Author name may have been misspelled.
+	</div>
+    <div id="inner">
+        <div id="title">
+            <center><h1>Book Nook</h1></center>
+        </div>
+        <center>
+            <button id="add-button" onclick="showAddBookModal()">Add Book</button>
+        </center>
+        <div id="left-shelf" class="shelf">
+            {{#each left-books}}
+                <div class="book" onclick="showBook('{{bookId}}')">
+                    <img src="{{coverImg}}">
+                </div>
+            {{/each}}
+        </div>
+        <div id="mid-shelf" class="shelf">
+            {{#each mid-books}}
+                <div class="book" onclick="showBook('{{bookId}}')">
+                    <img src="{{coverImg}}">
+                </div>
+            {{/each}}
+        </div>
+        <div id="right-shelf" class="shelf">
+            {{#each right-books}}
+                <div class="book" onclick="showBook('{{bookId}}')">
+                    <img src="{{coverImg}}">
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="js/1_home.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>

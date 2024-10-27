@@ -1,0 +1,19 @@
+.reg-div{
+    background-color: #C89055;
+    border: 3px solid #FDD79F;
+    border-radius: 10px;
+}
+#cover{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 30%;
+    height: 70%;
+}
+#content{
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    width: 40%;
+    height: 70%;
+}

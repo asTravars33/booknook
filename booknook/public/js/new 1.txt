@@ -1,0 +1,44 @@
+public boolean symmetric(Node root){
+
+	// Level order traversal
+	
+	Queue<Pointer> q = new LinkedList<Pointer>();
+	ArrayList<ArrayList<Integer>> levelOrder = new ArrayList<ArrayList<Integer>>();
+	q.add(new Pointer(root, 0));
+	
+	while(!q.isEmpty()){
+		Pointer next = q.pop();
+		// Add current node to the level order traversal
+		if(levelOrder.size()<next.level+1){
+			levelOrder.add(new ArrayList<Integer>());
+		}
+		levelOrder.get(next.level).add(next.node.num);
+		// Consider the node's children
+		if(next.left!=null){
+			q.add(new Pointer(next.left, next.level+1));
+		}
+		if(next.right!=null){
+			q.add(new Pointer(next.right, next.level+1));
+		}
+	}
+	
+	// Check symmetry
+	for(int i=0; i<levelOrder.size(); i++){
+		ArrayList<Integer> cur = levelOrder.get(i);
+		for(int k=0; k<int((cur.size()+1)/2); k++){
+			if(cur.get(k)!=cur.get(cur.size()-k-1)){
+				return false;
+			}
+		}
+	}
+	
+	return true;
+}
+public class Pointer{
+	Node node;
+	int level;
+	public Pointer(Node n, int l){
+		node = n;
+		level = l;
+	}
+}
